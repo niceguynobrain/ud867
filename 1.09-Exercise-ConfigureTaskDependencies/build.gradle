@@ -40,30 +40,40 @@ task brew {
 }
 
 task pour {
+    dependsOn "brew"
     doLast {
         println "Pouring. Glug, glug, glug."
     }
 }
 
 task addSweetener {
+    // shouldRunAfter "pour" // my answer
+    dependsOn pour // solution 
     doLast {
         println "Adding sweetener. Stir, stir, stir."
     }
 }
 
 task drink {
+    dependsOn "pour" 
+    // shouldRunAfter "addSweetener" // my answwer
+    mustRunAfter addSweetener // solution
     doLast {
         println "Drinking. Gulp, gulp, gulp."
     }
 }
 
 task blackCoffee {
+    // dependsOn = ["brew", "pour", "drink"] // my answer
+    dependsOn drink // solution
     doLast {
         println "Ummm, just how I like it."
     }
 }
 
 task sweetCoffee {
+    // dependsOn = ["brew", "pour", "addSweetener", "drink"] // my answer
+    dependsOn drink, addSweetener // solution
     doLast {
         println "Ummm, just how I like it."
     }
