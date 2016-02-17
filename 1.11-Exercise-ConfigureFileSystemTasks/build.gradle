@@ -41,7 +41,7 @@ task bundleWeb(type: Zip, dependsOn: copyWeb) {
     
 }
 
-task unpackBundle(type: Zip, dependsOn: bundleWeb){
+task unpackBundle(type: Copy, dependsOn: bundleWeb){
     from zipTree('build/web.zip')
     into 'build/exploded'
 }
