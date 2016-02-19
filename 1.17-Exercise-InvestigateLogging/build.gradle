@@ -23,17 +23,26 @@ Exercises:
 
 */
 
-task hello(type: HelloTask)
 
+task hello(type: HelloTask)
 class HelloTask extends DefaultTask {
     @TaskAction
     void doAction() {
-        println 'Hello World'
+        logger.info("Beginning of task.")
+        logger.lifecycle("Hello world.")
+        println 'Hello world again'
+        logger.info("End of task.")
+        logger.debug("catch me if you can")
     }
 }
 
-/*
+
+
 task derpy << {
     primp "Herp de derp"
 }
-*/
+
+// stacktrace 
+// gradle derpy -s
+
+// https://docs.gradle.org/current/userguide/logging.html
