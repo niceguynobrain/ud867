@@ -6,6 +6,7 @@ report showing how a particular dependency is included in your project.
 
 */
 
+
 apply plugin: 'java'
 
 repositories {

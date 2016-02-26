@@ -28,9 +28,10 @@ https://docs.gradle.org/current/userguide/java_plugin.html#sec:source_sets
 */
 
 apply plugin: "java"
+// Configure a plugin / add additional configuration
+version = '1.0' // useful for tracking our additions
 
-version = '1.0'
-
+// Modify jar Task 
 jar {
 	// add manifest attributes
 	manifest {
@@ -38,6 +39,7 @@ jar {
 	}
 }
 
+// Configure the main source set 
 sourceSets {
 	// include 'java' as additional source directory
 	main {
