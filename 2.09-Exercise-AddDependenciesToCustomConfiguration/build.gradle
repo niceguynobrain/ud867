@@ -43,6 +43,6 @@ task zipDeps(type: Zip) {
     appendix = 'appendix'
     version 1
     classifier = 'deps'
-    extension = '.LOL'
+    extension = 'zip'
     from configurations.deps
 }
