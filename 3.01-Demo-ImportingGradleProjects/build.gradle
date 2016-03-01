@@ -5,9 +5,16 @@ or build anything, it just tells a joke.
 
 */
 
+plugin 'java'
+
 task tellJoke << {
     println "What's a build master's favorite black metal band?"
     println "Gradle of Filth!"
+}
+
+task tellAnotherJoke << {
+    println "How long does it take to master build tools?"
+    println "From Gradle to grave."
 }
 
 /*
